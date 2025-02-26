@@ -6,14 +6,6 @@
   <RouterView />
   <div class="top-notification">
     <span
-      v-if="!appStore.isSponsored && !isUpdateAvailable"
-      class="unsponsored"
-    >
-      <span v-if="!isDev">
-        {{ i18n.t('special:unsponsored') }}
-      </span>
-    </span>
-    <span
       v-if="isUpdateAvailable"
       class="update"
       @click="onClickUpdate"
@@ -176,7 +168,7 @@ ipc.on('main:update-available', () => {
 ipc.on('main:focus', () => {
   // Yes, this is that annoying piece of crap code.
   // You can delete it, but know that you hurt me.
-  showSupportToast()
+  // showSupportToast()
 })
 
 ipc.on('main:app-protocol', (event, payload: string) => {

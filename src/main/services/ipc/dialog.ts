@@ -7,9 +7,7 @@ export const subscribeToDialog = () => {
       const { properties, filters } = payload
 
       const dir = dialog.showOpenDialogSync(BrowserWindow.getFocusedWindow()!, {
-        properties: properties || ['openDirectory', 'createDirectory'],
-        filters: filters || [{ name: '*', extensions: ['json'] }]
-      })
+        properties: properties || ['openDirectory', 'createDirectory'] })
 
       if (dir) {
         resolve(dir[0])

@@ -19,9 +19,7 @@
     "release": "bumpp -c 'build: release v' -t",
     "generate:language-readme": "node build/scripts/generate-language-readme.js ",
     "copy:plist": "copyfiles *.plist build",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "prepare": "husky install",
-    "preinstall": "npx only-allow pnpm"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "repository": "https://github.com/massCodeIO/massCode",
   "author": {
@@ -125,7 +123,6 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^8.2.0",
     "handlebars": "^4.7.7",
-    "husky": "^7.0.0",
     "lint-staged": "^12.1.4",
     "npm-run-all": "^4.1.5",
     "sass": "^1.45.1",
@@ -142,5 +139,16 @@
   },
   "volta": {
     "node": "16.15.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@apollo/protobufjs",
+      "core-js-pure",
+      "ejs",
+      "electron",
+      "esbuild",
+      "utf-8-validate",
+      "vue-demi"
+    ]
   }
 }
